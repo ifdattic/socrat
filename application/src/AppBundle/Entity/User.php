@@ -23,4 +23,11 @@ final class User extends BaseUser
     {
         parent::__construct();
     }
+
+    public function setEmail($email) : self
+    {
+        $this->setUsername($email);
+
+        return parent::setEmail($email);
+    }
 }
