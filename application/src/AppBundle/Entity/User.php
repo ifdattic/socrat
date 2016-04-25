@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -19,9 +20,34 @@ final class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Please enter your name.", groups={"UserlessRegistration", "UserlessProfile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="The name is too short.",
+     *     maxMessage="The name is too long.",
+     *     groups={"UserlessRegistration", "UserlessProfile"}
+     * )
+     */
+    protected $name = '';
+
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function getName() : string
+    {
+        return $this->name;
+    }
+
+    public function setName($name) : self
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function setEmail($email) : self

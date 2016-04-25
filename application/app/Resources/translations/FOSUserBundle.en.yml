@@ -1,0 +1,7 @@
+registration:
+    flash:
+        user_created: 'Your registration is successful!'
+
+security:
+    login:
+        username: Email
