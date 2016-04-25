@@ -1,0 +1,20 @@
+default:
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://www.socrat.dev
+            show_cmd: 'open %s'
+            sessions:
+                default:
+                    goutte: ~
+        Behat\Symfony2Extension: ~
+
+    suites:
+        default: # it is: web or ui
+            paths:
+                - %paths.base%/features/web
+            contexts:
+                - AuthenticationContext:
+                    userManager: '@fos_user.user_manager'
+                - DatabaseContext:
+                    em: '@doctrine.orm.default_entity_manager'
+                - Behat\MinkExtension\Context\MinkContext
