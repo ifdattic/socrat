@@ -5,3 +5,9 @@ registration:
 security:
     login:
         username: Email
+
+layout:
+    logout: 'Logout (%name%)'
+
+form:
+    name: Name

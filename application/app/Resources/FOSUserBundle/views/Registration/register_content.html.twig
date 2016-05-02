@@ -1,0 +1,14 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    {{ form_row(form.name, {'attr': {'autofocus': true}}) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+
+    <div class="form-group">
+        <div class="col-sm-3 col-sm-offset-2">
+            <button class="btn btn-primary" type="submit">{{ 'registration.submit'|trans }}</button>
+        </div>
+    </div>
+{{ form_end(form) }}

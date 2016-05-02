@@ -66,7 +66,7 @@ class AuthenticationContext extends RawMinkContext implements Context, SnippetAc
      */
     public function iShouldHaveAnOptionToLogOut()
     {
-        $this->assertSession()->elementExists('named', ['link', 'Log out']);
+        $this->assertSession()->elementExists('named', ['link', 'Logout']);
     }
 
     /**
