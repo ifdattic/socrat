@@ -13,7 +13,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "spec\\": "spec/"
         }
     },
     "require": {
@@ -28,7 +29,9 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "doctrine/doctrine-migrations-bundle": "^1.1"
+        "doctrine/doctrine-migrations-bundle": "^1.1",
+        "beberlei/assert": "^2.5",
+        "ramsey/uuid": "^3.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -37,7 +40,8 @@
         "behat/behat": "^3.1",
         "behat/mink-extension": "^2.2",
         "behat/mink-goutte-driver": "^1.2",
-        "behat/symfony2-extension": "^2.1"
+        "behat/symfony2-extension": "^2.1",
+        "phpspec/phpspec": "^2.5"
     },
     "scripts": {
         "post-install-cmd": [
